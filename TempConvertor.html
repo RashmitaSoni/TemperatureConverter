@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Temperature Converter</title>
+<style>
+h1 {
+  color: blue;
+  font-family: verdana;
+  text-align: center;
+  font-size: 300%;
+  padding-top: 20px;
+}
+.f  {
+  color: red;
+  font-family: verdana;
+  font-size: 180%;
+  padding-left: 80px;
+}
+
+.c{
+	padding-left: 110px;
+}
+.input{
+	width: 310px;
+	height: 35px;
+	border-width: 8px;
+	font-size: 20px;
+	font-family: verdana
+}
+table	{
+	padding-left: 80px;
+	padding-top: 150px;
+}
+.arrow{
+	color: red;
+    font-family: verdana;
+    font-size: 180%;
+	padding-left: 120px;
+}
+.bg{
+	background-color: yellow;
+}
+</style>
+</head>
+<body class="bg">
+<h1>Temperature Converter</h1>
+<table>
+	<tr>
+		<td>
+			
+			<input class="input" id="Fahrenheit" type="number" placeholder="Fahrenheit" oninput="temperatureConverter('F',this.value)" onchange="temperatureConverter('F',this.value)"><label class="arrow"><b><=======></b></label></br></br></br>
+			<label class = "f"><b>Fahrenheit</b></label>
+		</td>
+		<td class="c" >
+			<input class="input" id="Celcius" type="number" placeholder="Celcius" oninput="temperatureConverter('C',this.value)" onchange="temperatureConverter('C',this.value)"></br></br></br>
+			<label class = "f"><b>Celcius</b></label>
+		</td>
+	</tr>
+</table>
+<script>
+/*Function to convert temperatures*/
+function temperatureConverter(degree,valNum) {
+  if(degree == 'F'){
+ 	 valNum = parseFloat(valNum);
+  	 document.getElementById("Celcius").value=(valNum-32)/1.8;
+     }
+  else{
+  	valNum = parseFloat(valNum);
+    document.getElementById("Fahrenheit").value=(valNum*1.8)+32;
+  }
+  
+}
+</script>
+</body>
+</html>
+
